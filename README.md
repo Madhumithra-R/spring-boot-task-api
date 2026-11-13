@@ -1,28 +1,80 @@
-# Tasks REST API (Spring Boot)
+# 🚀 Tasks REST API
 
-Spring Boot 3.5 / Java 21 / Maven / Spring Web, Data JPA, Validation, H2
+A RESTful Task Management API built using **Java 21** and **Spring Boot 3.5**, featuring CRUD operations, input validation, exception handling, and layered architecture.
 
-## Run
-1. Open this folder in IntelliJ IDEA (File > Open > select pom.xml > Open as Project).
-2. Wait for Maven to download dependencies.
-3. Run TasksApplication.
-4. Visit http://localhost:8080/api/tasks (should show []).
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-brightgreen)
+![Maven](https://img.shields.io/badge/Build-Maven-blue)
+![Database](https://img.shields.io/badge/Database-H2-blue)
 
-Or from a terminal (needs Maven + JDK 21): mvn spring-boot:run
+## ✨ Features
 
-## Test
-- Postman, or IntelliJ built-in HTTP client: open requests.http and click the green arrows.
-- Automated tests: mvn test
-- Database viewer: http://localhost:8080/h2-console (JDBC URL jdbc:h2:mem:testdb, user sa, empty password)
+- Complete CRUD operations for task management.
+- Input validation using Jakarta Bean Validation.
+- Global exception handling with meaningful JSON responses.
+- Layered architecture (Controller, Service, Repository).
+- Unit testing using JUnit 5 and MockMvc.
+- H2 in-memory database integration.
 
-## Endpoints
-| Method | URL | Result |
+## 🛠️ Tech Stack
+
+Java 21 | Spring Boot 3.5 | Spring Data JPA | Hibernate | H2 | Maven | JUnit 5 | Mockito
+
+## 🏗️ Architecture
+
+```text
+Client → Controller → Service → Repository → H2
+```
+
+## 🔗 API Endpoints
+
+| Method | Endpoint | Description |
 |---|---|---|
-| GET | /api/tasks | 200 list |
-| GET | /api/tasks/{id} | 200 or 404 |
-| POST | /api/tasks | 201 or 400 |
-| PUT | /api/tasks/{id} | 200, 400 or 404 |
-| DELETE | /api/tasks/{id} | 204 or 404 |
+| GET | `/api/tasks` | Get all tasks |
+| GET | `/api/tasks/{id}` | Get task by ID |
+| POST | `/api/tasks` | Create task |
+| PUT | `/api/tasks/{id}` | Update task |
+| DELETE | `/api/tasks/{id}` | Delete task |
 
-## Layers
-Controller -> Service -> Repository -> H2 database
+## ⚙️ Getting Started
+
+**Clone the repository:**
+
+```bash
+git clone https://github.com/Madhumithra-R/spring-boot-task-api.git
+cd spring-boot-task-api
+```
+
+**Run the application:**
+
+```bash
+mvn spring-boot:run
+```
+
+API Base URL: `http://localhost:8080/api/tasks`
+
+## 🧪 Run Tests
+
+```bash
+mvn test
+```
+
+## 🗄️ H2 Database Console
+
+`http://localhost:8080/h2-console`
+
+JDBC URL: `jdbc:h2:mem:testdb`
+
+## 🚀 Future Enhancements
+
+- [ ] DTO implementation
+- [ ] MySQL integration
+- [ ] Pagination and sorting
+- [ ] JWT authentication
+- [ ] Swagger documentation
+
+## 👩‍💻 Author
+
+**Madhumithra R**
+
+[GitHub](https://github.com/Madhumithra-R) | [LinkedIn](https://www.linkedin.com/in/madhumithra-r/)
