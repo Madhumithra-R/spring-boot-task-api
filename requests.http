@@ -1,0 +1,29 @@
+### Create (expect 201)
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{ "title": "Learn Spring Boot" }
+
+### List all
+GET http://localhost:8080/api/tasks
+
+### Get one
+GET http://localhost:8080/api/tasks/1
+
+### Update
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{ "title": "Learn Spring Boot", "done": true }
+
+### Validation error (expect 400)
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{ "title": "" }
+
+### Not found (expect 404)
+GET http://localhost:8080/api/tasks/999
+
+### Delete (expect 204)
+DELETE http://localhost:8080/api/tasks/1
